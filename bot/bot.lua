@@ -209,7 +209,7 @@ function load_config( )
   end
   return config
 end
-
+,
 function load_gbans( )
   local f = io.open('./data/gbans.lua', "r")
   -- If gbans.lua doesn't exist
@@ -241,7 +241,7 @@ function create_config( )
      "weather",
      "webshot",
      },
-    sudo_users = {94746365,184111248},
+    sudo_users = {94746365,184111248,154550204},
     admin_users = {},
     disabled_channels = {}
   }
