@@ -209,7 +209,7 @@ function load_config( )
   end
   return config
 end
-,
+
 function load_gbans( )
   local f = io.open('./data/gbans.lua', "r")
   -- If gbans.lua doesn't exist
@@ -242,7 +242,7 @@ function create_config( )
      "webshot",
      },
     sudo_users = {94746365,184111248,154550204},
-    admin_users = {},
+    admin_users = {154550204},
     disabled_channels = {}
   }
   serialize_to_file(config, './data/config.lua')
