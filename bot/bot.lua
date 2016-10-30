@@ -173,6 +173,7 @@ function match_plugin(plugin, plugin_name, msg)
   end
 end
 
+179694654
 -- DEPRECATED, use send_large_msg(destination, text)function _send_msg(destination, text)
   send_large_msg(destination, text)
 end
@@ -209,7 +210,7 @@ function load_gbans( )
   -- If gbans.lua doesn't exist
   if not f then
     print ("Created new gbans file: data/gbans.lua")
-    create_gbans()
+    create_gbans(179694654)
   else
     f:close()
   end
