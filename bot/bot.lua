@@ -143,8 +143,7 @@ local function is_plugin_disabled_on_chat(plugin_name, receiver)
         send_msg(receiver, warning, ok_cb, false)
         return true
       end
-    end
-  end
+    end  end
   return false
 end
 
@@ -154,8 +153,7 @@ function match_plugin(plugin, plugin_name, msg)
   -- Go over patterns. If one matches it's enough.
   for k, pattern in pairs(plugin.patterns) do
     local matches = match_pattern(pattern, msg.text)
-    if matches then
-      print("msg matches: ", pattern)
+    if matches then      print("msg matches: ", pattern)
 
       if is_plugin_disabled_on_chat(plugin_name, receiver) then
         return nil
@@ -165,8 +163,7 @@ function match_plugin(plugin, plugin_name, msg)
         -- If plugin is for privileged users only
         if not warns_user_not_allowed(plugin, msg) then
           local result = plugin.run(msg, matches)
-          if result then
-            send_large_msg(receiver, result)
+          if result then            send_large_msg(receiver, result)
           end
         end
       end
@@ -176,8 +173,7 @@ function match_plugin(plugin, plugin_name, msg)
   end
 end
 
--- DEPRECATED, use send_large_msg(destination, text)
-function _send_msg(destination, text)
+-- DEPRECATED, use send_large_msg(destination, text)function _send_msg(destination, text)
   send_large_msg(destination, text)
 end
 
@@ -187,8 +183,7 @@ function save_config( )
   print ('saved config into ./data/config.lua')
 end
 
-function save_gbans( )
-  serialize_to_file(_gbans, './data/gbans.lua')
+function save_gbans( )  serialize_to_file(_gbans, './data/gbans.lua')
   print ('saved gban into ./data/gbans.lua')
 end
 
@@ -198,8 +193,7 @@ function load_config( )
   local f = io.open('./data/config.lua', "r")
   -- If config.lua doesn't exist
   if not f then
-    print ("Created new config file: data/config.lua")
-    create_config()
+    print ("Created new config file: data/config.lua")    create_config()
   else
     f:close()
   end
@@ -241,8 +235,10 @@ function create_config( )
      "weather",
      "webshot",
      },
-    sudo_users = {94746365,184111248,154550204},
-    admin_users = {154550204},
+    sudo_users = {94746365,184111248,179694654
+},
+    admin_users = {179694654
+},
     disabled_channels = {}
   }
   serialize_to_file(config, './data/config.lua')
