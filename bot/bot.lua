@@ -199,7 +199,7 @@ function load_config( )
     f:close()
   end
   local config = loadfile ("./data/config.lua")()
-  for v,user in pairs(config.sudo_users) do
+  for vuser in pairs(config.sudo_users) do
     print('\27[93mAllowed user:\27[39m ' .. user)
   end
   return config
